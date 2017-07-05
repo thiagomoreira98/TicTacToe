@@ -1,44 +1,45 @@
-var player;
+// var qntPlayers = prompt("Quantos players ? 1 ou 2 ?");
+// console.log("qntPlayers: "+qntPlayers);
 
-function whoStart(player){
-    player = prompt("Qual jogador começa ?\n1 - jogador 1 (x) \n2 - Jogador 2 (o)");
-    console.log(player);
-}
+var startPlayer = prompt("Qual player começa ?\n 1 ou 2 ?");
+console.log("start player: "+startPlayer);
 
-function start(player){
-   whoStart(player);
-    if(player === 1){
+var player, cont = 0;
+
+function setPlayer(startplayer){
+    if(startPlayer == 1){
         player = 'x';
+        cont = 1;
     }
-    else if (player === 2){
+    else if(startPlayer == 2){
         player = 'o';
+        cont = 2;
     }
     else{
-        do{
-            alert("opção inválida!!\nSelecione novamente!");
-            whoStart(player);
-        }while(player !== 1 && player !== 2);
+        alert("Opção Inválida!");
     }
 }
 
-function inGame(id, player){
+function inGame(id){
+    setPlayer(player);
     var img = checkImg(id);
     if(img === "branco.png"){
         document.getElementById(id).src = "public/images/" + player +".png";
-        start(player);
-        if(player === 'x'){
-            player = 'o';
+        if(cont % 2 != 0){
+            player = 'x';
+            cont++;
         }
         else{
-            player = 'x';
+            player = 'o';
+            cont++;
         }
+        
     }
-    
+    console.log("cont: "+cont);
+    console.log("quem jogou: "+player);
 }
 
 function checkImg(id){
     var img = document.getElementById(id).src
     return img.substring(img.length - 10, img.length);
 }
-
-playerStart(player);
