@@ -3,29 +3,41 @@
     <head>
         <meta charset="utf-8">
         <title>Jogo da Velha</title>
-        <link rel="stylesheet" type="text/css" href="css/style.css"/>   
-        <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
-        <script type="text/javascript" src="javascripts/game.js"></script>
-    </head>
-    <body>
-        <div id="jogo">
-            <div class="linha">
-                <div class="casa" id="casa1"></div>
-                <div class="casa" id="casa2"></div>
-                <div class="casa" id="casa3"></div>
-            </div>
-            <div class="linha">
-                <div class="casa" id="casa4"></div>
-                <div class="casa" id="casa5"></div>
-                <div class="casa" id="casa6"></div>
-            </div>
-            <div class="linha">
-                <div class="casa" id="casa7"></div>
-                <div class="casa" id="casa8"></div>
-                <div class="casa" id="casa9"></div>
-            </div>
-        </div>
         
-        <div id="resultado"></div>
+        <!-- css files -->
+        <link rel="stylesheet" type="text/css" href="public/css/style.css"/>
+        <!--link rel="stylesheet" type="text/css" href="public/vendor/materialize/css/materialize.css"/>
+        <link rel="stylesheet" type="text/css" href="public/vendor/materialize/css/materialize.min.css"/>-->
+        
+        <!-- javascripts files -->
+        <script type="text/javascript" src="public/javascripts/game.js"></script>
+        <!--<script type="text/javascript" src="public/vendor/materialize/js/materialize.js"></script>
+        <script type="text/javascript" src="public/vendor/materialize/js/materialize.min.js"></script> -->
+
+    </head>
+    
+    <body>
+        <h1 align="center">Tic Tac Toe</h1>
+        <div id="game">
+            <div class="linha">
+                <img src="public\images\branco.png" class="home" id="home1" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home2" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home3" onclick="inGame(this.id)">
+            </div>
+            
+            <div class="linha">
+                <img src="public\images\branco.png" class="home" id="home4" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home5" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home6" onclick="inGame(this.id)">
+            </div>
+           
+            <div class="linha">
+                <img src="public\images\branco.png" class="home" id="home7" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home8" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home9" onclick="inGame(this.id)">
+            </div>
+        </div>      
+        
+        <div id="result"></div>
     </body>
 </html>
