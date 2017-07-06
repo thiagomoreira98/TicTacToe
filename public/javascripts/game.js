@@ -1,44 +1,47 @@
 // var qntPlayers = prompt("Quantos players ? 1 ou 2 ?");
 // console.log("qntPlayers: "+qntPlayers);
+var cont = 0;
+var player = 0;
 
-var startPlayer = prompt("Qual player começa ?\n 1 ou 2 ?");
-console.log("start player: "+startPlayer);
-
-var player, cont = 0;
-
-function setPlayer(startplayer){
-    if(startPlayer == 1){
-        player = 'x';
-        cont = 1;
+//Seleciona se quer ser X ou O
+function whoStart(cont, player){
+    this.player = prompt("Escolha:\n1 - X\n2 - O");
+    if(this.player == 1){
+        this.cont = 1; //player = "x"
     }
-    else if(startPlayer == 2){
-        player = 'o';
-        cont = 2;
+    else if(this.player == 2){
+        this.cont = 2; //player = "o"
     }
     else{
-        alert("Opção Inválida!");
+        do{
+            alert("Opção Inválida!");
+            whoStart(cont, player);
+        }while(this.player != 1 && this.player != 2);
     }
 }
 
-function inGame(id){
-    setPlayer(player);
+whoStart(cont, player);
+console.log("quem jogou: "+player);
+console.log("cont: "+cont);
+
+//Função chamada quando o usuário clica na tela
+function inGame(id, cont){
     var img = checkImg(id);
-    if(img === "branco.png"){
-        document.getElementById(id).src = "public/images/" + player +".png";
-        if(cont % 2 != 0){
-            player = 'x';
-            cont++;
+    if(img === "branco.png"){        
+        if(this.cont % 2 != 0){
+            player = "x";
         }
-        else{
-            player = 'o';
-            cont++;
+        else if(this.cont % 2 == 0){
+            player = "o";
         }
-        
+        document.getElementById(id).src = "public/images/" +player +".png";     
     }
-    console.log("cont: "+cont);
+    this.cont++;
     console.log("quem jogou: "+player);
+    console.log("cont: "+this.cont);
 }
 
+//Função para pegar o 'src' da imagem
 function checkImg(id){
     var img = document.getElementById(id).src
     return img.substring(img.length - 10, img.length);
