@@ -2,30 +2,31 @@ var vetImg = [];
 
 //Função para pegar o 'src' de todas as imagens do tabuleiro
 function checkAllImg(){
-    var vet = [];
     for(var i = 0; i < 9; i++){
-        vet[i] = document.getElementById("home"+i).getAttribute("val");  
+        vetImg[i] = document.getElementById("home"+i).getAttribute("val");  
     }
-    console.log(vet);
-    return vet;
+    console.log(vetImg);
+    return vetImg;
 }
 
-vetImg = checkAllImg();
-console.log(vetImg);
+
 
 //Verificando se o player X é o vencedor
 function chkIfWinnerX(vetImg){
     //Linha 1
     if((this.vetImg[0] == "x") && (this.vetImg[1] == "x") && (this.vetImg[2] == "x")){
         winnerX();
+
     }
     //Linha 2
     else if((this.vetImg[3] == "x") && (this.vetImg[4] =="x") && (this.vetImg[5] == "x")){
         winnerX();
+
     }
     //Linha 3
     else if((this.vetImg[6] == "x") && (this.vetImg[7] == "x") && (this.vetImg[8] == "x")){
         winnerX();
+
     }
     //Diagonal primária
     else if((this.vetImg[0] == "x") && (this.vetImg[4] == "x") && (this.vetImg[8] == "x")){
@@ -92,11 +93,11 @@ function chkIfWinnerO(vetImg){
 }
 
 function winnerX(){
-    //console.log("Winner: Player X");
+    console.log("Winner: Player X");
 }
 
 function winnerO(){
-    //console.log("Winner: Player O");
+    console.log("Winner: Player O");
 }
 
 //Função para verificar o resultado
