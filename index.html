@@ -11,6 +11,7 @@
         
         <!-- javascripts files -->
         <script type="text/javascript" src="public/javascripts/game.js"></script>
+        <script type="text/javascript" src="public/javascripts/result.js"></script>
         <!--<script type="text/javascript" src="public/vendor/materialize/js/materialize.js"></script>
         <script type="text/javascript" src="public/vendor/materialize/js/materialize.min.js"></script> -->
 
@@ -20,25 +21,24 @@
         <h1 align="center">Tic Tac Toe</h1>
         <div id="game">
             <div class="linha">
-                <img src="public\images\branco.png" class="home" id="home1" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home2" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home3" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home0" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home1" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home2" val="branco" onclick="inGame(this.id)">
             </div>
             
             <div class="linha">
-                <img src="public\images\branco.png" class="home" id="home4" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home5" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home6" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home3" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home4" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home5" val="branco" onclick="inGame(this.id)">
             </div>
            
             <div class="linha">
-                <img src="public\images\branco.png" class="home" id="home7" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home8" onclick="inGame(this.id)">
-                <img src="public\images\branco.png" class="home" id="home9" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home6" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home7" val="branco" onclick="inGame(this.id)">
+                <img src="public\images\branco.png" class="home" id="home8" val="branco" onclick="inGame(this.id)">
             </div>
         </div>      
         
-        <p align="center">Resultado:</p>
-            <script type="text/javascript" src="public/javascripts/result.js"></script>
+        <div id="result"></div>
     </body>
 </html>
