@@ -5,28 +5,22 @@ function checkAllImg(){
     for(var i = 0; i < 9; i++){
         vetImg[i] = document.getElementById("home"+i).getAttribute("val");  
     }
-    console.log(vetImg);
     return vetImg;
 }
-
-
 
 //Verificando se o player X é o vencedor
 function chkIfWinnerX(vetImg){
     //Linha 1
     if((this.vetImg[0] == "x") && (this.vetImg[1] == "x") && (this.vetImg[2] == "x")){
         winnerX();
-
     }
     //Linha 2
     else if((this.vetImg[3] == "x") && (this.vetImg[4] =="x") && (this.vetImg[5] == "x")){
         winnerX();
-
     }
     //Linha 3
     else if((this.vetImg[6] == "x") && (this.vetImg[7] == "x") && (this.vetImg[8] == "x")){
         winnerX();
-
     }
     //Diagonal primária
     else if((this.vetImg[0] == "x") && (this.vetImg[4] == "x") && (this.vetImg[8] == "x")){
@@ -49,7 +43,7 @@ function chkIfWinnerX(vetImg){
         winnerX();
     }
     else{
-        // console.log("erro X");
+        draw();
     }
 }
 
@@ -88,16 +82,23 @@ function chkIfWinnerO(vetImg){
         winnerO();
     }
     else{
-        // console.log("erro O");
+        draw();
     }
 }
 
 function winnerX(){
     console.log("Winner: Player X");
+    return;
 }
 
 function winnerO(){
     console.log("Winner: Player O");
+    return;
+}
+
+function draw(){
+    console.log("Draw");
+    return;
 }
 
 //Função para verificar o resultado
