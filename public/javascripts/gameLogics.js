@@ -1,41 +1,30 @@
-var qntPlayers = 0;
 var contPlayer = 0; //Contador de vez do player
 var contMoves = 0; //Contador de jogadas
 var player = 0;
-
-//Função para verificar a quantidade de players
-function quantifyPlayers(){
-    do{
-        qntPlayers = prompt("Informe a quantidade de Player:\n1 ou 2 players?");
-    }while((qntPlayers != 1) && (qntPlayers != 2));
-}
-
-//Seleciona se quer ser X ou O
-function whoStart(){
-    contPlayer = prompt("Player 1 Escolha:\n1 - X\n2 - O");
-    
-    while((contPlayer != 1) && (contPlayer != 2)){
-        alert("Opção Inválida!");
-        whoStart();
-    }
-}
+var vetImg = []; //vetor que recebe todas as src das imagens
 
 //Função que verifica quem é o proximo a jogar
 function whoNext(){
     var proximo;
     if(contPlayer % 2 != 0){
-            player = "x";
-            proximo = "player O"
-            contPlayer++;
-            contMoves++;
+        player = "x";
+        if(qntPlayers == 1){
+            //função que o CPU joga vem aqui
+        }
+        proximo = "player O"
+        contPlayer++;
+        contMoves++;
     }
-    else if(contPlayer % 2 == 0){
+    else{
         player = "o";
+        if(qntPlayers == 1){
+            //função que o CPU joga vem aqui
+        }
         proximo = "player X"
         contPlayer++;
         contMoves++;
     }
-    console.log("Vez do: "+proximo);
+    //console.log("Vez do: "+proximo);
 }
 
 //Função para pegar o 'src' da imagem que ele clicar
@@ -44,5 +33,10 @@ function getSrcImg(id){
     return img.substring(img.length - 10, img.length);
 }
 
-quantifyPlayers();
-whoStart();
+function cpuPlays(id, vetImg){
+    var home = getSrcImg(id);
+    if(home == "branco.png"){
+        vet
+        // document.getElementById(id).setAttribute("src", "public\images\ " +player +".png");
+    }
+}

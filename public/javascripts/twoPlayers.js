@@ -1,0 +1,3 @@
+if(qntPlayers == 2){
+    
+}

@@ -1,4 +1,3 @@
-var vetImg = [];
 var drawX = 0;
 var drawO = 0;
 
@@ -124,7 +123,6 @@ function draw(){
 //Função para verificar o resultado
 function chkResult(){
     getSrcAllImg();
-    // console.log("vetImg: "+vetImg);
     chkIfWinnerO(vetImg);
     chkIfWinnerX(vetImg);
     chkIfDraw();
