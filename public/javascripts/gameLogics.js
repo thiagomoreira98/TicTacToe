@@ -28,37 +28,20 @@ function whoNext(){
             proximo = "player O"
             contPlayer++;
             contMoves++;
-        }
-        else if(contPlayer % 2 == 0){
-            player = "o";
-            proximo = "player X"
-            contPlayer++;
-            contMoves++;
-        }
-        console.log("Vez do: "+proximo);
+    }
+    else if(contPlayer % 2 == 0){
+        player = "o";
+        proximo = "player X"
+        contPlayer++;
+        contMoves++;
+    }
+    console.log("Vez do: "+proximo);
 }
 
 //Função para pegar o 'src' da imagem que ele clicar
 function getSrcImg(id){
     var img = document.getElementById(id).src
     return img.substring(img.length - 10, img.length);
-}
-
-//Função chamada quando o usuário clica na tela
-function inGame(id){
-    var img = getSrcImg(id);
-    if(img === "branco.png"){        
-        whoNext();
-        document.getElementById(id).src = "public/images/" +player +".png";
-        document.getElementById(id).setAttribute("val", player);
-        document.getElementById(id).removeAttribute("onclick");
-    }
-    //console.log("quem jogou: "+player);
-    console.log("contPlayer: "+this.contPlayer);
-    console.log("contMoves: "+contMoves);
-
-    //Verifica o resultado
-    chkResult();
 }
 
 quantifyPlayers();

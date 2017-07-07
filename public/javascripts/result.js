@@ -1,6 +1,6 @@
 var vetImg = [];
-var drawX = false;
-var drawO = false;
+var drawX = 0;
+var drawO = 0;
 
 //Função para pegar o 'src' de todas as imagens do tabuleiro
 function getSrcAllImg(){
@@ -9,7 +9,7 @@ function getSrcAllImg(){
     }
 }
 
-//Verificando se o player X é o vencedor
+//Função para verificar se o player X é o vencedor
 function chkIfWinnerX(vet){
     //Linha 1
     if((vet[0] == "x") && (vet[1] == "x") && (vet[2] == "x")){
@@ -44,11 +44,12 @@ function chkIfWinnerX(vet){
         winnerX();
     }
     else{
-        return drawX = true;
+        drawX++;
+        return drawX;
     }
 }
 
-//Verificando se o player O é o vencedor
+//Função para verificar se o player O é o vencedor
 function chkIfWinnerO(vet){
     //Linha 1
     if((vet[0] == "o") && (vet[1] == "o") && (vet[2] == "o")){
@@ -83,7 +84,15 @@ function chkIfWinnerO(vet){
         winnerO();
     }
     else{
-        return drawO = true;
+        drawO++;
+        return drawO;
+    }
+}
+
+//Função para verificar se deu empate
+function chkIfDraw(){
+    if((contMoves == 9) && (drawX == 9) && (drawO == 9)){
+        draw();
     }
 }
 
@@ -96,22 +105,20 @@ function rmOnclick(){
 
 //Função para exibir se o ganhador for o "X"
 function winnerX(){
-    console.log("Winner: Player X");
     rmOnclick()
-    return;
+    console.log("Winner: Player X");
 }
 
 //Função para exibir se o ganhador for o "O"
 function winnerO(){
-    console.log("Winner: Player O");
     rmOnclick()
-    return;
+    console.log("Winner: Player O");
 }
 
 //Função para exibir se deu Empate
 function draw(){
+    rmOnclick()
     console.log("Draw");
-    return;
 }
 
 //Função para verificar o resultado
@@ -120,4 +127,5 @@ function chkResult(){
     // console.log("vetImg: "+vetImg);
     chkIfWinnerO(vetImg);
     chkIfWinnerX(vetImg);
+    chkIfDraw();
 }
