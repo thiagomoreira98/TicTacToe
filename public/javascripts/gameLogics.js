@@ -37,14 +37,24 @@ function cpuLevelEasy(){
     }
 }
 
-//Função nivel de dificuldade Difícil da CPU
-function cpuLevelHard(){
-    homeId = "home4"
-    getAttVal(homeId);
-    if(getVal == "branco"){
+//Função nivel de dificuldade normal da CPU
+function cpuLevelNormal(){
+    chkIfPlayerWinInNextMove(vetImg);
+    getAttVal("home4");
+    if((homeId == "") && (getVal == "branco")){
+        homeId = "home4";
         vetImg[homeId] = cpu;
         setSrcAndValCpu(homeId);
     }
+    else{
+        homeId = "home3";
+        getAttVal(homeId);
+        if(getVal == "branco"){
+            vetImg[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+        }
+    }
+    homeId = "zero";
 }
 
 //Função que chama a CPU conforme o level escolhido
@@ -53,6 +63,6 @@ function cpuLevel(){
         cpuLevelEasy();
     }
     else{
-        cpuLevelHard();
+        cpuLevelNormal();
     }
 }

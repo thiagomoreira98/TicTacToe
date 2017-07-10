@@ -25,7 +25,7 @@ function whoStart(){
 
 //Função que seleciona o nivel de dificuldade da CPU
 function whatCpuLevel(){
-    level = prompt("Nivel de Dificuldade:\n1 - Easy\n2 - Hard");
+    level = prompt("Nivel de Dificuldade:\n1 - Easy\n2 - Normal");
 
     while((level != 1) && (level != 2)){
         alert("Opção Inválida!\nSelecione Novamente!");
@@ -33,7 +33,7 @@ function whatCpuLevel(){
     }
 }
 
-//Iniciando o jogo;
+//Iniciando o jogo
 quantifyPlayers();
 if(qntPlayers == 1){
     whatCpuLevel();
