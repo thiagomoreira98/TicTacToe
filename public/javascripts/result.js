@@ -1,8 +1,8 @@
-var drawX = 0;
-var drawO = 0;
+var drawX = 0; //verificando quantidade de vezes que a função chkWinnerX foi chamada
+var drawO = 0; //verificando quantidade de vezes que a função chkWinnerO foi chamada
 
-//Função para pegar o 'src' de todas as imagens do tabuleiro
-function getSrcAllImg(){
+//Função para pegar o atributo "val" de todas as img do tabuleiro
+function setVetImg(){
     for(var i = 0; i < 9; i++){
         vetImg[i] = document.getElementById("home"+i).getAttribute("val");  
     }
@@ -90,39 +90,57 @@ function chkIfWinnerO(vet){
 
 //Função para verificar se deu empate
 function chkIfDraw(){
-    if((contMoves == 9) && (drawX == 9) && (drawO == 9)){
-        draw();
+    if(qntPlayers == 1){
+        //Se o player jogou 5 vezes e ainda nao ganhou é pq deu empate (modo um jogador)
+        if((contMoves == 5) && (drawX == 10) && (drawO == 10)){
+            draw();
+        }
+    }
+    else{
+        //Se a soma das jogadas dos 2 players deu 9 e nao teve vencedor é pq deu empate
+        if((contMoves == 9) && (drawX == 9) && (drawO == 9)){
+            draw();
+        }
     }
 }
 
-//Função para remover onclick de todas as img
+//Função para remover o atributo "onclick" de todas as img
 function rmOnclick(){
     for(var i = 0; i < 9; i++){
         document.getElementsByClassName("home")[i].removeAttribute("onclick");
+        document.getElementsByClassName("home")[i].setAttribute("val", "");
     }
 }
 
-//Função para exibir se o ganhador for o "X"
+//Função para exibir a div do resultado
+function showResult(){
+    document.getElementById("result").style.display = "block";
+}
+
+//Função para exibir se o ganhador for o player "X"
 function winnerX(){
     rmOnclick()
+    showResult()
     console.log("Winner: Player X");
 }
 
-//Função para exibir se o ganhador for o "O"
+//Função para exibir se o ganhador for o player "O"
 function winnerO(){
     rmOnclick()
+    showResult()
     console.log("Winner: Player O");
 }
 
 //Função para exibir se deu Empate
 function draw(){
     rmOnclick()
+    showResult()
     console.log("Draw");
 }
 
 //Função para verificar o resultado
 function chkResult(){
-    getSrcAllImg();
+    setVetImg();
     chkIfWinnerO(vetImg);
     chkIfWinnerX(vetImg);
     chkIfDraw();

@@ -17,3 +17,12 @@
     border-right:solid 1px;
     float:left;
 }
+
+#result{
+    display: none;
+    position: absolute;
+    height:100px;
+    width:250px;
+    top:65%;
+    left:30%;
+}

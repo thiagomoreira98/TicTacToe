@@ -1,15 +1,17 @@
-//Função chamada quando o usuário clica na tela
+//Função chamada quando o usuário clica na div
 function inGame(id){
-    var img = getSrcImg(id);
-    if(img === "branco.png"){        
-        whoNext();
-        document.getElementById(id).src = "public/images/" +player +".png";
-        document.getElementById(id).setAttribute("val", player);
+    getAttVal(id);
+    if(getVal == "branco"){
+        if(qntPlayers == 1){
+            whoNextOnePlayer(id);
+            chkResult();
+            setTimeout(cpuLevel(), 4000);
+            chkResult();
+        }
+        else{
+            whoNextTwoPlayers(id);
+            chkResult();
+        }  
     }
-    //console.log("quem jogou: "+player);
-    //console.log("contPlayer: "+this.contPlayer);
-    //console.log("contMoves: "+contMoves);
-
-    //Verifica o resultado
-    chkResult();
+    setVetImg();
 }

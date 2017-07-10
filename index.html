@@ -2,12 +2,10 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Jogo da Velha</title>
+        <title>Tic Tac Toe</title>
         
         <!-- css files -->
         <link rel="stylesheet" type="text/css" href="public/css/style.css"/>
-        <!--link rel="stylesheet" type="text/css" href="public/vendor/materialize/css/materialize.css"/>
-        <link rel="stylesheet" type="text/css" href="public/vendor/materialize/css/materialize.min.css"/>-->
         
         <!-- javascripts files -->
         <script type="text/javascript" src="public/javascripts/inGame.js"></script>
@@ -16,14 +14,12 @@
         <script type="text/javascript" src="public/javascripts/onePlayer.js"></script>
         <script type="text/javascript" src="public/javascripts/twoPlayers.js"></script>
         <script type="text/javascript" src="public/javascripts/result.js"></script>
-        <!--<script type="text/javascript" src="public/vendor/materialize/js/materialize.js"></script>
-        <script type="text/javascript" src="public/vendor/materialize/js/materialize.min.js"></script> -->
 
     </head>
     
-    <body>
+    <body>  
         <h1 align="center">Tic Tac Toe</h1>
-        <div id="game">
+        <div id="game" align="center">
             <div class="linha">
                 <img src="public\images\branco.png" class="home" id="home0" val="branco" onclick="inGame(this.id)">
                 <img src="public\images\branco.png" class="home" id="home1" val="branco" onclick="inGame(this.id)">
@@ -43,6 +39,8 @@
             </div>
         </div>      
         
-        <div id="result"></div>
+        <div id="result">
+            <h3 align="center">Resultado:</h3> 
+        </div>
     </body>
 </html>
