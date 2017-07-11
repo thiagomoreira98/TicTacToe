@@ -30,7 +30,7 @@ function cpuLevelEasy(){
     getAttVal(homeId);
     if(getVal == "branco"){
         vetImg[numRandom] = cpu;
-        setSrcAndValCpu(homeId)
+        setTimeout(function() {setSrcAndValCpu(homeId);}, 1000);
     }
     else if((getVal != "branco") && (getVal != "") && (contMoves != 5)){
         cpuLevelEasy();
@@ -39,10 +39,9 @@ function cpuLevelEasy(){
 
 //Função nivel de dificuldade normal da CPU
 function cpuLevelNormal(){
-    if(contMoves > 1){
-        chkIfPlayerWinInNextMove(vetImg);
-    }
-    if(playerWinInNextMove == false){
+    var retorno = chkIfPlayerWinInNextMove(vetImg)
+    //debugger;
+    if(retorno == false){
         getAttVal("home4");
         if(getVal == "branco"){
             vetImg[4] = cpu;
@@ -54,25 +53,25 @@ function cpuLevelNormal(){
                 vetImg[3] = cpu;
                 setSrcAndValCpu("home3");
             }
-        }
-    }
-    else if(cpuPlays == false){
-        getAttVal("home3");
-        if(getVal == "branco"){
-            vetImg[3] = cpu;
-            setSrcAndValCpu("home3");
-        }
-        else{
-            do{
-                var numRandom = Math.floor(Math.random() * 9);
-                homeId = "home" + numRandom;
-                getAttVal(homeId);
+            else{
+                getAttVal("home2");
                 if(getVal == "branco"){
-                    vetImg[numRandom] = cpu;
-                    setSrcAndValCpu(homeId);
+                    vetImg[2] = cpu;
+                    setSrcAndValCpu("home2");
                 }
-            }while(getVal != "branco");
-        }  
+                else{
+                    do{
+                        var numRandom = Math.floor(Math.random() * 9)
+                        homeId = "home" + numRandom;
+                        getAttVal(homeId)
+                        if(getVal == "branco"){
+                            vetImg[homeId] = cpu;
+                            setSrcAndValCpu(homeId);
+                        }
+                    }while((getVal != "branco") && (contMoves < 5))
+                }
+            }
+        }
     }
 }
 

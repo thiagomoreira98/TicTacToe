@@ -1,7 +1,5 @@
 var drawX = 0; //verificando quantidade de vezes que a função chkWinnerX foi chamada
 var drawO = 0; //verificando quantidade de vezes que a função chkWinnerO foi chamada
-var cpuPlays = false; //Verificando se a CPU ja jogou
-var playerWinInNextMove = false; //Verificando se o player irá ganhar na proxima jogada
 
 //Função para pegar o atributo "val" de todas as img do tabuleiro
 function setVetImg(){
@@ -111,173 +109,317 @@ function chkIfPlayerWinInNextMove(vet){
     //Linha 1
     if((vet[0] == player) && (vet[1] == player)){
         homeId = "home2"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 1
     else if((vet[1] == player) && (vet[2] ==player)){
         homeId = "home0"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 1
     else if((vet[0] == player) && (vet[2] == player)){
         homeId = "home1"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 2
     else if((vet[3] == player) && (vet[4] == player)){
         homeId = "home5"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 2
     else if((vet[4] == player) && (vet[5] ==player)){
         homeId = "home3"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 2
     else if((vet[3] == player) && (vet[5] == player)){
         homeId = "home4"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 3
     else if((vet[6] == player) && (vet[7] == player)){
         homeId = "home8"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 3
     else if((vet[7] == player) && (vet[8] ==player)){
         homeId = "home6"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Linha 3
     else if((vet[6] == player) && (vet[8] == player)){
         homeId = "home7"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 1
     else if((vet[0] == player) && (vet[3] == player)){
         homeId = "home6"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 1
     else if((vet[3] == player) && (vet[6] ==player)){
         homeId = "home0"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 1
     else if((vet[0] == player) && (vet[6] == player)){
         homeId = "home3"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 2
     else if((vet[1] == player) && (vet[4] == player)){
         homeId = "home7"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 2
     else if((vet[4] == player) && (vet[7] ==player)){
         homeId = "home1"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 2
     else if((vet[1] == player) && (vet[7] == player)){
         homeId = "home4"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 3
     else if((vet[2] == player) && (vet[5] == player)){
         homeId = "home8"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 3
     else if((vet[5] == player) && (vet[8] ==player)){
         homeId = "home2"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Coluna 3
     else if((vet[2] == player) && (vet[8] == player)){
         homeId = "home5"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Primária
     else if((vet[0] == player) && (vet[4] ==player)){
         homeId = "home8"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Primária
     else if((vet[4] == player) && (vet[8] == player)){
         homeId = "home0"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Primária
     else if((vet[0] == player) && (vet[8] == player)){
         homeId = "home4"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Secundária
     else if((vet[6] == player) && (vet[4] ==player)){
         homeId = "home2"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Secundária
     else if((vet[2] == player) && (vet[4] == player)){
         homeId = "home6"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     //Diagonal Secundária
     else if((vet[2] == player) && (vet[6] == player)){
         homeId = "home4"
-        vet[homeId] = cpu;
-        setSrcAndValCpu(homeId);
-        cpuPlays = true;
+        getAttVal(homeId)
+        if(getVal == "branco"){
+            vet[homeId] = cpu;
+            setSrcAndValCpu(homeId);
+            return true;
+        }
+        else{
+            return false;
+        }
     }
     else{
-        playerWinInNextMove = false;
+        return false;
     }
 }
 
