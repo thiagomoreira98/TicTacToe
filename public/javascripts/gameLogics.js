@@ -39,22 +39,41 @@ function cpuLevelEasy(){
 
 //Função nivel de dificuldade normal da CPU
 function cpuLevelNormal(){
-    chkIfPlayerWinInNextMove(vetImg);
-    getAttVal("home4");
-    if((homeId == "") && (getVal == "branco")){
-        homeId = "home4";
-        vetImg[homeId] = cpu;
-        setSrcAndValCpu(homeId);
+    if(contMoves > 1){
+        chkIfPlayerWinInNextMove(vetImg);
     }
-    else{
-        homeId = "home3";
-        getAttVal(homeId);
+    if(playerWinInNextMove == false){
+        getAttVal("home4");
         if(getVal == "branco"){
-            vetImg[homeId] = cpu;
-            setSrcAndValCpu(homeId);
+            vetImg[4] = cpu;
+            setSrcAndValCpu("home4");
+        }
+        else{
+            getAttVal("home3");
+            if(getVal == "branco"){
+                vetImg[3] = cpu;
+                setSrcAndValCpu("home3");
+            }
         }
     }
-    homeId = "zero";
+    else if(cpuPlays == false){
+        getAttVal("home3");
+        if(getVal == "branco"){
+            vetImg[3] = cpu;
+            setSrcAndValCpu("home3");
+        }
+        else{
+            do{
+                var numRandom = Math.floor(Math.random() * 9);
+                homeId = "home" + numRandom;
+                getAttVal(homeId);
+                if(getVal == "branco"){
+                    vetImg[numRandom] = cpu;
+                    setSrcAndValCpu(homeId);
+                }
+            }while(getVal != "branco");
+        }  
+    }
 }
 
 //Função que chama a CPU conforme o level escolhido
