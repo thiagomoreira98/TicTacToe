@@ -1,3 +1,8 @@
+*, *::before, *::after {
+   box-sizing: content-box !important;
+   -webkit-box-sizing: content-box !important;
+}
+
 #game{
     position: absolute;
     width:303px;
@@ -12,8 +17,8 @@
 }
  
 .home{
-    width:100px;
-    height:100%;
+    width: 100px;
+    height: 100px;
     border-right:solid 1px;
     float:left;
 }
