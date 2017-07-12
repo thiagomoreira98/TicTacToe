@@ -33,9 +33,19 @@ function whatCpuLevel(){
     }
 }
 
-//Iniciando o jogo
-quantifyPlayers();
-if(qntPlayers == 1){
-    whatCpuLevel();
+//Função para iniciar o jogo
+function startGame(){
+    for(var i = 0; i < 9; i++){
+        imgsId = "home"+i
+        document.getElementById(imgsId).src = "public/images/branco.png";
+        document.getElementById(imgsId).setAttribute("val", "branco");
+        document.getElementById(imgsId).setAttribute("onclick", "inGame(this.id)");
+    }
+    
+    //Iniciando o jogo
+    quantifyPlayers();
+    if(qntPlayers == 1){
+        whatCpuLevel();
+    }
+    whoStart();
 }
-whoStart();

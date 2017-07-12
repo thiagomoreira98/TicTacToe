@@ -30,7 +30,7 @@ function cpuLevelEasy(){
     getAttVal(homeId);
     if(getVal == "branco"){
         vetImg[numRandom] = cpu;
-        setTimeout(function() {setSrcAndValCpu(homeId);}, 1000);
+        setSrcAndValCpu(homeId);
     }
     else if((getVal != "branco") && (getVal != "") && (contMoves != 5)){
         cpuLevelEasy();
@@ -40,7 +40,6 @@ function cpuLevelEasy(){
 //Função nivel de dificuldade normal da CPU
 function cpuLevelNormal(){
     var retorno = chkIfPlayerWinInNextMove(vetImg)
-    //debugger;
     if(retorno == false){
         getAttVal("home4");
         if(getVal == "branco"){
@@ -48,16 +47,16 @@ function cpuLevelNormal(){
             setSrcAndValCpu("home4");
         }
         else{
-            getAttVal("home3");
+            getAttVal("home2");
             if(getVal == "branco"){
-                vetImg[3] = cpu;
-                setSrcAndValCpu("home3");
+                vetImg[2] = cpu;
+                setSrcAndValCpu("home2");
             }
             else{
-                getAttVal("home2");
+                getAttVal("home3");
                 if(getVal == "branco"){
-                    vetImg[2] = cpu;
-                    setSrcAndValCpu("home2");
+                    vetImg[3] = cpu;
+                    setSrcAndValCpu("home3");
                 }
                 else{
                     do{

@@ -5,7 +5,7 @@ function inGame(id){
         if(qntPlayers == 1){
             whoNextOnePlayer(id);
             chkResult();
-            setTimeout(cpuLevel(), 4000);
+            setTimeout(function(){cpuLevel()}, 500);
             chkResult();
         }
         else{

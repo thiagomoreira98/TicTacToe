@@ -24,10 +24,41 @@
 }
 
 #result{
-    display: none;
-    position: absolute;
+    display: block;
+    float: left;
     height:100px;
     width:250px;
     top:65%;
     left:30%;
+}
+
+#startButton{
+    margin-bottom: 30px;
+}
+
+#score{
+    width: 303px;
+    float: right;
+    margin-right: 100px;
+}
+
+#rodape{
+    margin-top: 374px
+}
+
+#modalX{
+    display: none;
+}
+
+#modalO{
+    display: none;
+}
+
+#modalDraw{
+    display: none;
+}
+
+#aDraw{
+    margin-top: 50px;
+    margin-right: 100px;
 }

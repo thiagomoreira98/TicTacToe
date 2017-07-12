@@ -1,5 +1,32 @@
 var drawX = 0; //verificando quantidade de vezes que a função chkWinnerX foi chamada
 var drawO = 0; //verificando quantidade de vezes que a função chkWinnerO foi chamada
+var somaWinX = 0; //Contando a quantidade de vitórias do player X
+var somaWinO = 0; //Contando a quantidade de vitórias do player O
+var somaDraw = 0; //Contando a quantidade de empates
+var verif1 = false;
+var verif2 = false;
+var verif3 = false;
+var verif4 = false;
+var verif5 = false;
+var verif6 = false;
+var verif7 = false;
+var verif8 = false;
+var verif9 = false;
+var verif10 = false;
+var verif11 = false;
+var verif12 = false;
+var verif13 = false;
+var verif14 = false;
+var verif15 = false;
+var verif16 = false;
+var verif17 = false;
+var verif18 = false;
+var verif19 = false;
+var verif20 = false;
+var verif21 = false;
+var verif22 = false;
+var verif23 = false;
+var verif24 = false;
 
 //Função para pegar o atributo "val" de todas as img do tabuleiro
 function setVetImg(){
@@ -94,6 +121,7 @@ function chkIfDraw(){
         //Se o player jogou 5 vezes e ainda nao ganhou é pq deu empate (modo um jogador)
         if((contMoves == 5) && (drawX == 10) && (drawO == 10)){
             draw();
+            console.log("draw:" +somaDraw);
         }
     }
     else{
@@ -107,9 +135,10 @@ function chkIfDraw(){
 //Função para a CPU verificar se o Player irá ganhar na proxima jogada
 function chkIfPlayerWinInNextMove(vet){
     //Linha 1
-    if((vet[0] == player) && (vet[1] == player)){
+    if((vet[0] == player) && (vet[1] == player)&& (verif23 != true)){
         homeId = "home2"
         getAttVal(homeId)
+        verif23 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -120,9 +149,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 1
-    else if((vet[1] == player) && (vet[2] ==player)){
+    else if((vet[1] == player) && (vet[2] ==player) && (verif24 != true)){
         homeId = "home0"
         getAttVal(homeId)
+        verif24 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -133,9 +163,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 1
-    else if((vet[0] == player) && (vet[2] == player)){
+    else if((vet[0] == player) && (vet[2] == player) && (verif1 != true)){
         homeId = "home1"
         getAttVal(homeId)
+        verif1 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -146,9 +177,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 2
-    else if((vet[3] == player) && (vet[4] == player)){
+    else if((vet[3] == player) && (vet[4] == player) && (verif2 != true)){
         homeId = "home5"
         getAttVal(homeId)
+        verif2 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -159,9 +191,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 2
-    else if((vet[4] == player) && (vet[5] ==player)){
+    else if((vet[4] == player) && (vet[5] ==player) && (verif3 != true)){
         homeId = "home3"
         getAttVal(homeId)
+        verif3 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -172,9 +205,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 2
-    else if((vet[3] == player) && (vet[5] == player)){
+    else if((vet[3] == player) && (vet[5] == player) && (verif4 != true)){
         homeId = "home4"
         getAttVal(homeId)
+        verif4 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -185,9 +219,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 3
-    else if((vet[6] == player) && (vet[7] == player)){
+    else if((vet[6] == player) && (vet[7] == player) && (verif5 != true)){
         homeId = "home8"
         getAttVal(homeId)
+        verif5 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -198,12 +233,13 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 3
-    else if((vet[7] == player) && (vet[8] ==player)){
+    else if((vet[7] == player) && (vet[8] ==player) && (verif6 != true)){
         homeId = "home6"
         getAttVal(homeId)
+        verif6 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
-            setSrcAndValCpu(homeId);
+            setSrcAndValCpu(homeId);      
             return true;
         }
         else{
@@ -211,9 +247,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Linha 3
-    else if((vet[6] == player) && (vet[8] == player)){
+    else if((vet[6] == player) && (vet[8] == player) && (verif7 != true)){
         homeId = "home7"
         getAttVal(homeId)
+        verif7 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -224,9 +261,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 1
-    else if((vet[0] == player) && (vet[3] == player)){
+    else if((vet[0] == player) && (vet[3] == player) && (verif8 != true)){
         homeId = "home6"
         getAttVal(homeId)
+        verif8 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -237,9 +275,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 1
-    else if((vet[3] == player) && (vet[6] ==player)){
+    else if((vet[3] == player) && (vet[6] ==player) && (verif9 != true)){
         homeId = "home0"
         getAttVal(homeId)
+        verif9 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -250,9 +289,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 1
-    else if((vet[0] == player) && (vet[6] == player)){
+    else if((vet[0] == player) && (vet[6] == player) && (verif10 != true)){
         homeId = "home3"
         getAttVal(homeId)
+        verif10 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -263,9 +303,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 2
-    else if((vet[1] == player) && (vet[4] == player)){
+    else if((vet[1] == player) && (vet[4] == player) && (verif11 != true)){
         homeId = "home7"
         getAttVal(homeId)
+        verif11 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -276,9 +317,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 2
-    else if((vet[4] == player) && (vet[7] ==player)){
+    else if((vet[4] == player) && (vet[7] ==player) && (verif12 != true)){
         homeId = "home1"
         getAttVal(homeId)
+        verif12 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -289,9 +331,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 2
-    else if((vet[1] == player) && (vet[7] == player)){
+    else if((vet[1] == player) && (vet[7] == player) && (verif13 != true)){
         homeId = "home4"
         getAttVal(homeId)
+        verif13 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -302,9 +345,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 3
-    else if((vet[2] == player) && (vet[5] == player)){
+    else if((vet[2] == player) && (vet[5] == player) && (verif14 != true)){
         homeId = "home8"
         getAttVal(homeId)
+        verif14 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -315,9 +359,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 3
-    else if((vet[5] == player) && (vet[8] ==player)){
+    else if((vet[5] == player) && (vet[8] ==player) && (verif15 != true)){
         homeId = "home2"
         getAttVal(homeId)
+        verif15 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -328,9 +373,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Coluna 3
-    else if((vet[2] == player) && (vet[8] == player)){
+    else if((vet[2] == player) && (vet[8] == player) && (verif16 != true)){
         homeId = "home5"
         getAttVal(homeId)
+        verif16 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -341,9 +387,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Primária
-    else if((vet[0] == player) && (vet[4] ==player)){
+    else if((vet[0] == player) && (vet[4] ==player) && (verif17 != true)){
         homeId = "home8"
         getAttVal(homeId)
+        verif17 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -354,9 +401,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Primária
-    else if((vet[4] == player) && (vet[8] == player)){
+    else if((vet[4] == player) && (vet[8] == player) && (verif18 != true)){
         homeId = "home0"
         getAttVal(homeId)
+        verif18 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -367,9 +415,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Primária
-    else if((vet[0] == player) && (vet[8] == player)){
+    else if((vet[0] == player) && (vet[8] == player) && (verif19 != true)){
         homeId = "home4"
         getAttVal(homeId)
+        verif19 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -380,9 +429,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Secundária
-    else if((vet[6] == player) && (vet[4] ==player)){
+    else if((vet[6] == player) && (vet[4] ==player) && (verif20 != true)){
         homeId = "home2"
         getAttVal(homeId)
+        verif20 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -393,9 +443,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Secundária
-    else if((vet[2] == player) && (vet[4] == player)){
+    else if((vet[2] == player) && (vet[4] == player) && (verif21 != true)){
         homeId = "home6"
         getAttVal(homeId)
+        verif21 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -406,9 +457,10 @@ function chkIfPlayerWinInNextMove(vet){
         }
     }
     //Diagonal Secundária
-    else if((vet[2] == player) && (vet[6] == player)){
+    else if((vet[2] == player) && (vet[6] == player) && (verif22 != true)){
         homeId = "home4"
         getAttVal(homeId)
+        verif22 = true;
         if(getVal == "branco"){
             vet[homeId] = cpu;
             setSrcAndValCpu(homeId);
@@ -431,30 +483,40 @@ function rmOnclick(){
     }
 }
 
-//Função para exibir a div do resultado
-function showResult(){
-    document.getElementById("result").style.display = "block";
-}
-
 //Função para exibir se o ganhador for o player "X"
 function winnerX(){
+    somaWinX++;
     rmOnclick()
-    showResult()
-    console.log("Winner: Player X");
+    document.getElementById("modalX").style.display = "block";
 }
 
 //Função para exibir se o ganhador for o player "O"
 function winnerO(){
+    somaWinO++;
     rmOnclick()
-    showResult()
-    console.log("Winner: Player O");
+    document.getElementById("modalO").style.display = "block";
 }
 
 //Função para exibir se deu Empate
 function draw(){
+    somaDraw++;
     rmOnclick()
-    showResult()
-    console.log("Draw");
+    document.getElementById("modalDraw").style.display = "block";   
+}
+
+//Função para fechar o Modal do player O
+function closeModalO(){
+    document.getElementById("modalO").style.display = "none";
+}
+
+//Função para fechar o Modal do player X
+function closeModalX(){
+    document.getElementById("modalX").style.display = "none";
+}
+
+//Função para fechar o Modal do player O
+function closeModalDraw(){
+    document.getElementById("modalDraw").style.display = "none";
 }
 
 //Função para verificar o resultado
