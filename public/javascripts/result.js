@@ -484,24 +484,27 @@ function rmOnclick(){
 }
 
 //Função para exibir se o ganhador for o player "X"
-function winnerX(){
-    somaWinX++;
+function winnerX(){   
     rmOnclick()
+    somaWinX++;
     document.getElementById("modalX").style.display = "block";
+    document.getElementById("aX").innerHTML = "Player X - "+somaWinX;
 }
 
 //Função para exibir se o ganhador for o player "O"
-function winnerO(){
-    somaWinO++;
+function winnerO(){                     
     rmOnclick()
+    somaWinO++;
     document.getElementById("modalO").style.display = "block";
+    document.getElementById("aO").innerHTML = "Player O - "+somaWinO;
 }
 
 //Função para exibir se deu Empate
 function draw(){
-    somaDraw++;
     rmOnclick()
-    document.getElementById("modalDraw").style.display = "block";   
+    somaDraw++;
+    document.getElementById("modalDraw").style.display = "block";
+    document.getElementById("aDraw").innerHTML = "Draw - "+somaDraw;   
 }
 
 //Função para fechar o Modal do player O
