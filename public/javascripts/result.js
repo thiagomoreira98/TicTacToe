@@ -3,6 +3,9 @@ var drawO = 0; //verificando quantidade de vezes que a função chkWinnerO foi c
 var somaWinX = 0; //Contando a quantidade de vitórias do player X
 var somaWinO = 0; //Contando a quantidade de vitórias do player O
 var somaDraw = 0; //Contando a quantidade de empates
+var vencedorX = false;
+var vencedorO = false;
+var semVencedor = false;
 var verif1 = false;
 var verif2 = false;
 var verif3 = false;
@@ -121,7 +124,6 @@ function chkIfDraw(){
         //Se o player jogou 5 vezes e ainda nao ganhou é pq deu empate (modo um jogador)
         if((contMoves == 5) && (drawX == 10) && (drawO == 10)){
             draw();
-            console.log("draw:" +somaDraw);
         }
     }
     else{
@@ -489,6 +491,7 @@ function winnerX(){
     somaWinX++;
     document.getElementById("modalX").style.display = "block";
     document.getElementById("aX").innerHTML = "Player X - "+somaWinX;
+    vencedorX = true;
 }
 
 //Função para exibir se o ganhador for o player "O"
@@ -497,6 +500,7 @@ function winnerO(){
     somaWinO++;
     document.getElementById("modalO").style.display = "block";
     document.getElementById("aO").innerHTML = "Player O - "+somaWinO;
+    vencedorO = true;
 }
 
 //Função para exibir se deu Empate
@@ -504,7 +508,16 @@ function draw(){
     rmOnclick()
     somaDraw++;
     document.getElementById("modalDraw").style.display = "block";
-    document.getElementById("aDraw").innerHTML = "Draw - "+somaDraw;   
+    document.getElementById("aDraw").innerHTML = "Draw - "+somaDraw;
+    semVencedor = true; 
+}
+
+//Função para verificar o resultado
+function chkResult(){
+    setVetImg();
+    chkIfWinnerO(vetImg);
+    chkIfWinnerX(vetImg);
+    chkIfDraw();
 }
 
 //Função para fechar o Modal do player O
@@ -520,12 +533,4 @@ function closeModalX(){
 //Função para fechar o Modal do player O
 function closeModalDraw(){
     document.getElementById("modalDraw").style.display = "none";
-}
-
-//Função para verificar o resultado
-function chkResult(){
-    setVetImg();
-    chkIfWinnerO(vetImg);
-    chkIfWinnerX(vetImg);
-    chkIfDraw();
 }

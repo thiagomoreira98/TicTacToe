@@ -35,6 +35,9 @@ function whatCpuLevel(){
 
 //Função para iniciar o jogo
 function startGame(){
+    drawO = 0;
+    drawX = 0;
+    contMoves = 0;
     for(var i = 0; i < 9; i++){
         imgsId = "home"+i
         document.getElementById(imgsId).src = "public/images/branco.png";

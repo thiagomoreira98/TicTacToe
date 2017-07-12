@@ -13,7 +13,7 @@ function getAttVal(id){
 
 //Função para mudar o atributo "val" da img quando for a vez da CPU
 function setSrcAndValCpu(homeId){
-    document.getElementById(homeId).src = "public/images/" +cpu +".png";
+    setTimeout(function(){document.getElementById(homeId).src = "public/images/" +cpu +".png"}, 700);
     document.getElementById(homeId).setAttribute("val", cpu);
 }
 
@@ -67,7 +67,7 @@ function cpuLevelNormal(){
                             vetImg[homeId] = cpu;
                             setSrcAndValCpu(homeId);
                         }
-                    }while((getVal != "branco") && (contMoves < 5))
+                    }while((getVal != "branco") && (contMoves < 5) &&(vencedorO != true) && (vencedorX != true) && (semVencedor != true))
                 }
             }
         }

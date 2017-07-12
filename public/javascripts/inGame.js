@@ -4,14 +4,19 @@ function inGame(id){
     if(getVal == "branco"){
         if(qntPlayers == 1){
             whoNextOnePlayer(id);
+            setVetImg();
             chkResult();
-            setTimeout(function(){cpuLevel()}, 500);
+            cpuLevel();
+            setVetImg();
             chkResult();
         }
         else{
             whoNextTwoPlayers(id);
+            setVetImg();
             chkResult();
         }  
     }
-    setVetImg();
+    console.log("ContMoves: "+contMoves);
+    console.log("drawX: "+drawX);
+    console.log("drawO: "+drawO);
 }
