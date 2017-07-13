@@ -13,13 +13,13 @@ function getAttVal(id){
 
 //Função para mudar o atributo "val" da img quando for a vez da CPU
 function setSrcAndValCpu(homeId){
-    setTimeout(function(){document.getElementById(homeId).src = "public/images/" +cpu +".png"}, 700);
+    setTimeout(function(){document.getElementById(homeId).src = "../public/images/" +cpu +".png"}, 700);
     document.getElementById(homeId).setAttribute("val", cpu);
 }
 
 //Função para mudar o atributo "val" da img quando for a vez do player
 function setSrcAndValPlayer(id){
-    document.getElementById(id).src = "public/images/" +player +".png";
+    document.getElementById(id).src = "../public/images/" +player +".png";
     document.getElementById(id).setAttribute("val", player);
 }
 

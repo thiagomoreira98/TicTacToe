@@ -40,7 +40,7 @@ function startGame(){
     contMoves = 0;
     for(var i = 0; i < 9; i++){
         imgsId = "home"+i
-        document.getElementById(imgsId).src = "public/images/branco.png";
+        document.getElementById(imgsId).src = "../public/images/branco.png";
         document.getElementById(imgsId).setAttribute("val", "branco");
         document.getElementById(imgsId).setAttribute("onclick", "inGame(this.id)");
     }
