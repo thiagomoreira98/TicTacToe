@@ -34,6 +34,12 @@ function whatCpuLevel(){
 
 //Função para iniciar o jogo
 function startGame(){
+    somaDraw = 0;
+    somaWinO = 0;
+    somaWinX = 0;
+    document.getElementById("aX").innerHTML = "Player X ---- 0"
+    document.getElementById("aO").innerHTML = "Player O ---- 0"
+    document.getElementById("aDraw").innerHTML = "Empates ---- 0"
     document.getElementById("modalX").style.display = "none";
     document.getElementById("modalO").style.display = "none";
     document.getElementById("modalDraw").style.display = "none";

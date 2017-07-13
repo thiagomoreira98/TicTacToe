@@ -490,7 +490,7 @@ function winnerX(){
     rmOnclick()
     somaWinX++;
     document.getElementById("modalX").style.display = "block";
-    document.getElementById("aX").innerHTML = "Player X - "+somaWinX;
+    document.getElementById("aX").innerHTML = "Player X ---- "+somaWinX;
     vencedorX = true;
 }
 
@@ -499,7 +499,7 @@ function winnerO(){
     rmOnclick()
     somaWinO++;
     document.getElementById("modalO").style.display = "block";
-    document.getElementById("aO").innerHTML = "Player O - "+somaWinO;
+    document.getElementById("aO").innerHTML = "Player O ---- "+somaWinO;
     vencedorO = true;
 }
 
@@ -508,7 +508,7 @@ function draw(){
     rmOnclick()
     somaDraw++;
     document.getElementById("modalDraw").style.display = "block";
-    document.getElementById("aDraw").innerHTML = "Draw - "+somaDraw;
+    document.getElementById("aDraw").innerHTML = "Empates ---- "+somaDraw;
     semVencedor = true; 
 }
 
