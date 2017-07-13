@@ -3,7 +3,7 @@ var level = 0; //nivel de dificuldade
 
 //Função para verificar a quantidade de players
 function quantifyPlayers(){
-    qntPlayers = prompt("Informe a quantidade de Player:\n1 ou 2 players?");
+    qntPlayers = prompt("Selecione:\n1 - Jogar com CPU\n2 - Jogar com Amigo");
     
     if((qntPlayers != 1) && (qntPlayers != 2)){
         do{
