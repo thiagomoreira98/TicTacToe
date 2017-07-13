@@ -47,29 +47,15 @@ function cpuLevelNormal(){
             setSrcAndValCpu("home4");
         }
         else{
-            getAttVal("home2");
-            if(getVal == "branco"){
-                vetImg[2] = cpu;
-                setSrcAndValCpu("home2");
-            }
-            else{
-                getAttVal("home3");
+            do{
+                var numRandom = Math.floor(Math.random() * 9)
+                homeId = "home" + numRandom;
+                getAttVal(homeId)
                 if(getVal == "branco"){
-                    vetImg[3] = cpu;
-                    setSrcAndValCpu("home3");
+                    vetImg[homeId] = cpu;
+                    setSrcAndValCpu(homeId);
                 }
-                else{
-                    do{
-                        var numRandom = Math.floor(Math.random() * 9)
-                        homeId = "home" + numRandom;
-                        getAttVal(homeId)
-                        if(getVal == "branco"){
-                            vetImg[homeId] = cpu;
-                            setSrcAndValCpu(homeId);
-                        }
-                    }while((getVal != "branco") && (contMoves < 5) &&(vencedorO != true) && (vencedorX != true) && (semVencedor != true))
-                }
-            }
+            }while((getVal != "branco") && (contMoves < 5) &&(vencedorO != true) && (vencedorX != true) && (semVencedor != true))
         }
     }
 }

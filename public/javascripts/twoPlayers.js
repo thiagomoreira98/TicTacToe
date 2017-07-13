@@ -13,5 +13,4 @@ function whoNextTwoPlayers(id){
         contMoves++;
     }
     setSrcAndValPlayer(id);
-    //console.log("Vez do Player "+proximo);
 }

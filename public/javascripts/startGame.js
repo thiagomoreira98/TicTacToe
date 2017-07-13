@@ -4,12 +4,11 @@ var level = 0; //nivel de dificuldade
 //Função para verificar a quantidade de players
 function quantifyPlayers(){
     qntPlayers = prompt("Selecione:\n1 - Jogar com CPU\n2 - Jogar com Amigo");
-    
-    if((qntPlayers != 1) && (qntPlayers != 2)){
-        do{
-            alert("Opção Inválida!\nSelecine novamente!");
-            quantifyPlayers();
-        }while((qntPlayers != 1) && (qntPlayers != 2));
+    console.log(qntPlayers);
+
+   while((qntPlayers != 1) && (qntPlayers != 2) && (qntPlayers != null)){
+        alert("Opção Inválida!\nSelecine novamente!");
+        quantifyPlayers();
     }
 }
 
@@ -17,7 +16,7 @@ function quantifyPlayers(){
 function whoStart(){
     contPlayer = prompt("Player 1 Escolha:\n1 - X\n2 - O");
     
-    while((contPlayer != 1) && (contPlayer != 2)){
+    while((contPlayer != 1) && (contPlayer != 2)  && (contPlayer != null)){
         alert("Opção Inválida!");
         whoStart();
     }
@@ -27,7 +26,7 @@ function whoStart(){
 function whatCpuLevel(){
     level = prompt("Nivel de Dificuldade:\n1 - Easy\n2 - Normal");
 
-    while((level != 1) && (level != 2)){
+    while((level != 1) && (level != 2) && (level != null)){
         alert("Opção Inválida!\nSelecione Novamente!");
         whatCpuLevel();
     }
@@ -35,6 +34,9 @@ function whatCpuLevel(){
 
 //Função para iniciar o jogo
 function startGame(){
+    document.getElementById("modalX").style.display = "none";
+    document.getElementById("modalO").style.display = "none";
+    document.getElementById("modalDraw").style.display = "none";
     drawO = 0;
     drawX = 0;
     contMoves = 0;
@@ -47,8 +49,53 @@ function startGame(){
     
     //Iniciando o jogo
     quantifyPlayers();
-    if(qntPlayers == 1){
-        whatCpuLevel();
+    debugger;
+    if(qntPlayers != null){
+        if(qntPlayers == 1){
+            whatCpuLevel();
+            if(level != null){
+                whoStart();
+                chkIfPromptIsNull()    
+            }
+        }
+        else if(qntPlayers == 2){
+            whoStart();
+            chkIfPromptIsNull()
+        }
+       
     }
-    whoStart();
+}
+
+//Função para reiniciar o jogo
+function restartGame(){
+    document.getElementById("modalX").style.display = "none";
+    document.getElementById("modalO").style.display = "none";
+    document.getElementById("modalDraw").style.display = "none";
+    drawO = 0;
+    drawX = 0;
+    contMoves = 0;
+    for(var i = 0; i < 9; i++){
+        imgsId = "home"+i
+        document.getElementById(imgsId).src = "../public/images/branco.png";
+        document.getElementById(imgsId).setAttribute("val", "branco");
+        document.getElementById(imgsId).setAttribute("onclick", "inGame(this.id)");
+    }
+
+    if(qntPlayers == 2){
+        whoStart();
+        chkIfPromptIsNull();
+    }   
+}
+
+//funcão para verificar se o usuario clicou em cancelar em algum prompt
+function chkIfPromptIsNull(){
+    if((qntPlayers == null) || (level == null) || (contPlayer == null)){
+        qntPlayers = "semValor";
+        level = "semValor";
+        contPlayer = "semValor";
+        for(var i = 0; i < 9; i++){
+            imgsId = "home"+i;
+            document.getElementById(imgsId).setAttribute("onclick", "");
+        }
+    }
 }

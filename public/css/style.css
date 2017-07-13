@@ -36,6 +36,10 @@
     margin-bottom: 30px;
 }
 
+#restartButton{
+    margin-left: 160px;
+}
+
 #score{
     width: 303px;
     float: right;

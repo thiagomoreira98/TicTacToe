@@ -23,20 +23,20 @@
     <body>
         <div align="center">
             <h1 align="center">Tic Tac Toe</h1>
-            <button id="startButton" class="waves-effect waves-light btn" onclick="startGame()">New Game</button>
+            <button id="startButton" class="waves-effect waves-light btn" onclick="startGame()">Novo Jogo</button>
         </div>
 
         <!-- Score -->
         <div id="score" class="col s12 m6" align="right">
             <div class="card blue-grey darken-1">
                 <div class="card-content white-text">
-                    <span class="card-title" align="center"><strong>SCORE</strong></span>
+                    <span class="card-title" align="center"><strong>PLACAR</strong></span>
                 </div>
                     
                 <div class="card-action"> 
                     <a id="aX">Player X ---- 0</a>
                     <a id="aO">Player O ---- 0</a>
-                    <a id="aDraw">Draw ---- 0</a>
+                    <a id="aDraw">Empates ---- 0</a>
                 </div>
             </div>
         </div>
@@ -70,7 +70,8 @@
             </div>
             
             <div class="modal-body">
-                <p align="center"><strong>Player X Wins!!</strong></p>
+                <p align="center"><strong>Player X Venceu!!</strong></p>
+                <button id="restartButton" class="waves-effect waves-light btn" onclick="restartGame()">Reiniciar Jogo</button>
             </div>
         </div>
 
@@ -82,7 +83,8 @@
             </div>
             
             <div class="modal-body">
-                <p align="center"><strong>Player O Wins!!</strong></p>
+                <p align="center"><strong>Player O Venceu!!</strong></p>
+                <button id="restartButton" class="waves-effect waves-light btn" onclick="restartGame()">Reiniciar Jogo</button>
             </div>
         </div>
 
@@ -94,7 +96,8 @@
             </div>
             
             <div class="modal-body">
-                <p align="center" ><strong>Draw !!</strong></p>
+                <p align="center" ><strong>Empate!!</strong></p>
+                <button id="restartButton" class="waves-effect waves-light btn" onclick="restartGame()">Reiniciar Jogo</button>
             </div>
         </div>
 
