@@ -55,7 +55,6 @@ function startGame(){
     
     //Iniciando o jogo
     quantifyPlayers();
-    debugger;
     if(qntPlayers != null){
         if(qntPlayers == 1){
             whatCpuLevel();
