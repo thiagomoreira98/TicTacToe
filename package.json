@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/thiagomoreira98/TicTacToe#readme",
   "dependencies": {
-    "express": "^4.15.3",
+    "express": "^4.15.3"
   }
 }
